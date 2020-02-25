@@ -20,10 +20,10 @@
                 <tr>
                   <td>&nbsp;</td>
                 </tr>
-                <template for:each={add_product_discount_list} for:item="product_detail">
-                    <tr key ={product_detail.Name} >
+                <template for:each={edit_product_display_list} for:item="product_detail">
+                    <tr key ={product_detail.name} >
                       <td>&nbsp;</td>
-                      <td><a href={product_detail.nameUrl}>{product_detail.Name}</a></td>
+                      <td><a href={product_detail.nameUrl}>{product_detail.name}</a></td>
                       <td><lightning-input  name ={product_detail.select_id} value={product_detail.quantity} onblur={quantity_save} style="width: 80px;"></lightning-input></td>
                       <td><lightning-input  readonly = "" name = "unitprice" value={product_detail.unitprice} style="width: 80px;"></lightning-input></td>
                       <td><lightning-input  name ={product_detail.select_id} value={product_detail.discount} onblur={discount_save} style="width: 80px;"></lightning-input></td>
