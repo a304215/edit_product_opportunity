@@ -7,8 +7,10 @@ export default class Edit_product extends LightningElement {
     @track edit_product_display_list = [];
     @track edit_product_mix_str = [];
     handleButtonSelect(){
+        console.log("get in function");
         get_all_product({opp_id:this.recordId})
         .then(result => {
+            console.log(result);
             for(let i = 0 ; i < result.length;i++){
                 this.edit_product_display_list[i] = {
                     name:result[i].Name,
@@ -22,8 +24,9 @@ export default class Edit_product extends LightningElement {
                     OLI_Id : result[i].Id
                 }
             }
+            console.log("finish");
             console.log(this.edit_product_display_list);
-            this.edit_product = true
+            this.edit_product = true;
         })
         .catch(error => {
             this.error = error;
